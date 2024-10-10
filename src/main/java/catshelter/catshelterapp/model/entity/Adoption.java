@@ -12,10 +12,8 @@ public class Adoption extends BaseEntity {
     private LocalDate date;
 
     @OneToOne
-    @Column(nullable = false)
     private Cat adoptedCat;
     @ManyToOne
-    @Column(nullable = false)
     private User user;
 
     public LocalDate getDate() {
