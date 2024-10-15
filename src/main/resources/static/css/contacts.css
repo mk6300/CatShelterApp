@@ -1,5 +1,5 @@
  .u-section-1 {
-  background-image: linear-gradient(0deg, rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('images/photo-1596381922409-7d652e31ec88.jpeg');
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('/images/photo-1596381922409-7d652e31ec88.jpeg');
   background-position: 50% 50%;
 }
 
@@ -186,7 +186,7 @@
     height: 1301px;
   }
 } .u-section-3 {
-  background-image: linear-gradient(0deg, rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('images/photo-1549545931-59bf067af9ab.jpeg');
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('/images/photo-1549545931-59bf067af9ab.jpeg');
   background-position: 50% 50%;
 }
 

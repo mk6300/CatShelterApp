@@ -19,7 +19,7 @@ public class SecurityConfig {
 
                                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
 
-                                .requestMatchers("/", "/login", "/login-error", "/register", "/about", "/contact", "/subscribe", "/unsubscribe").permitAll()
+                                .requestMatchers("**", "/login", "/login-error", "/register", "/about", "/contact", "/subscribe", "/unsubscribe").permitAll()
 
                                 .requestMatchers("/home", "/users/**", "/adoption/**").authenticated()
                                 .requestMatchers("/admin/**").hasRole("ADMIN")
