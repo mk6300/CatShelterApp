@@ -29,11 +29,9 @@ public class IndexController {
     public String cats() {
         return "cats";
     }
-
     public String login(Model model) {
         return "login";
     }
-
     public String loginError() {
         return "login-error";
     }
