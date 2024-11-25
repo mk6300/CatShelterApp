@@ -1,5 +1,7 @@
 package catshelter.catshelterapp.service.implementation;
 
+import catshelter.catshelterapp.model.dto.AddCatDto;
+import catshelter.catshelterapp.model.entity.Cat;
 import catshelter.catshelterapp.repository.CatRepository;
 import catshelter.catshelterapp.service.CatService;
 import org.modelmapper.ModelMapper;
@@ -16,8 +18,10 @@ public class CatServiceImpl implements CatService {
         this.modelMapper = modelMapper;
     }
 
-
-    private void addCat() {
-        //TODO
+    @Override
+    public void addCat(AddCatDto addCatDto) {
+        Cat cat = modelMapper.map(addCatDto, Cat.class);
+        catRepository.save(cat);
     }
+
 }

@@ -1,10 +1,8 @@
 package catshelter.catshelterapp.model.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -28,7 +26,15 @@ public class User extends BaseEntity {
 
     @OneToMany(mappedBy = "owner")
     private List<Cat> cats;
-
+    @ManyToMany(
+            fetch = FetchType.EAGER
+    )
+    @JoinTable(
+            name = "users_roles",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
+    private List<UserRole> roles = new ArrayList<>();
     public User(String username, String password, String firstName, String lastName, String email, String phone, List<Cat> cats) {
         this.username = username;
         this.password = password;
@@ -96,5 +102,13 @@ public class User extends BaseEntity {
 
     public void setCats(List<Cat> cats) {
         this.cats = cats;
+    }
+
+    public List<UserRole> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<UserRole> roles) {
+        this.roles = roles;
     }
 }
