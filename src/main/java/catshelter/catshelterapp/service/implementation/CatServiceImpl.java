@@ -24,4 +24,9 @@ public class CatServiceImpl implements CatService {
         catRepository.save(cat);
     }
 
+    @Override
+    public Cat findCatByName(String name) {
+        return catRepository.findByName(name).orElse(null);
+    }
+
 }
